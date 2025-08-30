@@ -6,42 +6,41 @@
     
     <title>Abderrahmane El Bouadani | Links</title>
     
-    <!-- Custom Favicon -->
-    <!-- Custom Favicon -->
-        <link rel="icon" href="img/logo.png">
+    <!-- Using a placeholder for the favicon for demonstration -->
+    <link rel="icon" href="https://placehold.co/32x32/111827/FFFFFF/png?text=AE">
 
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles for the new theme -->
     <style>
         body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(to right, #ffffff, #d4f1f4); /* White to Ocean Blue Gradient */
-            background-size: 200% 200%;
-            animation: gradient-animation 15s ease infinite;
+            font-family: 'Inter', sans-serif;
+            /* A sophisticated dark gradient background */
+            background-color: #0f172a; /* slate-900 */
+            background-image: radial-gradient(at 27% 37%, hsla(215, 98%, 61%, 0.1) 0px, transparent 50%), 
+                              radial-gradient(at 97% 21%, hsla(125, 98%, 72%, 0.1) 0px, transparent 50%),
+                              radial-gradient(at 52% 99%, hsla(355, 98%, 61%, 0.1) 0px, transparent 50%),
+                              radial-gradient(at 10% 29%, hsla(256, 96%, 67%, 0.1) 0px, transparent 50%),
+                              radial-gradient(at 97% 96%, hsla(38, 60%, 74%, 0.1) 0px, transparent 50%),
+                              radial-gradient(at 33% 50%, hsla(222, 67%, 73%, 0.1) 0px, transparent 50%),
+                              radial-gradient(at 79% 53%, hsla(343, 68%, 79%, 0.1) 0px, transparent 50%);
         }
-        @keyframes gradient-animation {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        .link-button {
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            background-color: rgba(255, 255, 255, 0.7);
-            color: #1e3a8a; /* Dark Blue */
-            border: 1px solid rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(5px);
-        }
-        .link-button:hover {
-            transform: scale(1.03);
-            background-color: #1e3a8a; /* Dark Blue */
-            color: #ffffff;
-            box-shadow: 0 10px 20px rgba(30, 58, 138, 0.2);
-        }
-        .profile-container {
+
+        /* Glassmorphism card effect with a glowing border */
+        .glass-card {
+            background-color: rgba(15, 23, 42, 0.6); /* slate-900 with opacity */
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 80px rgba(0,0,0,0.4);
             animation: fadeInSlideUp 0.8s ease-out forwards;
         }
+
         @keyframes fadeInSlideUp {
             from {
                 opacity: 0;
@@ -52,192 +51,226 @@
                 transform: translateY(0);
             }
         }
-        .social-icon:hover {
-            transform: scale(1.2);
-            color: #3b82f6; /* Blue-500 */
+        
+        /* Profile image style with hover effect */
+        .profile-image {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        /* Styles for the dropdown */
+        .profile-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(59, 130, 246, 0.5); /* blue-500 glow */
+        }
+
+        /* Typing animation styles */
+        .typing-container {
+            min-height: 56px; /* Ensures layout doesn't jump */
+        }
+        .typing-cursor {
+            width: 3px;
+            background-color: #60a5fa; /* blue-400 */
+            animation: blink 0.7s infinite;
+        }
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        /* Social icon hover effect */
+        .social-icon {
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+        .social-icon:hover {
+            transform: translateY(-4px) scale(1.1);
+            color: #60a5fa; /* blue-400 */
+        }
+        
+        /* Main link button styles */
+        .link-button {
+            background-color: rgba(30, 41, 59, 0.7); /* slate-800 */
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #e2e8f0; /* slate-200 */
+            transition: all 0.3s ease;
+        }
+        .link-button:hover {
+            background-color: rgba(59, 130, 246, 0.2); /* blue-500 */
+            border-color: rgba(59, 130, 246, 0.5);
+            color: #ffffff;
+        }
+
+        /* Dropdown content styling and animation */
         .dropdown-content {
             max-height: 0;
             overflow: hidden;
-            transition: all 0.5s ease-in-out;
-            background-color: rgba(255, 255, 255, 0.5);
-            backdrop-filter: blur(5px);
+            transition: max-height 0.5s ease-out, padding 0.4s ease-out;
+            background-color: rgba(30, 41, 59, 0.7); /* slate-800 */
         }
         .dropdown-content.open {
-            max-height: 200px;
+            max-height: 200px; /* Set a height large enough for the content */
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
         }
-        .social-link {
-            transition: background-color 0.2s ease-in-out;
+
+        /* New Contact button style */
+        .contact-button {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
-        /* Typing effect styles */
-        .typing-container {
-            min-height: 56px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-        .typing-cursor {
-            display: inline-block;
-            width: 3px;
-            height: 1.75rem;
-            background-color: #1e3a8a; /* Dark Blue */
-            animation: blink 0.7s infinite;
-            margin-left: 4px;
-        }
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
+        .contact-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
         }
     </style>
 </head>
-<body class="p-4 flex items-center justify-center min-h-screen">
+<body class="text-slate-300 p-4 flex items-center justify-center min-h-screen">
 
-    <main class="w-full max-w-lg mx-auto profile-container">
-        <div class="bg-white/50 backdrop-blur-xl rounded-2xl p-6 md:p-8 shadow-xl">
+    <main class="w-full max-w-md mx-auto">
+        <div class="glass-card rounded-3xl p-6 md:p-8">
             <!-- Profile Info Section -->
             <div class="text-center">
-                <img src="img/logo.png" alt="Profile Picture" class="w-32 h-32 rounded-full mx-auto mb-5 ring-4 ring-white/50 object-cover">
-                <div class="typing-container">
-                    <h1 class="text-2xl font-bold text-gray-800">
-                        Hi, I am <span id="typing-text"></span><span id="typing-cursor" class="typing-cursor"></span>
+                <!-- IMPORTANT: Replaced "img/logo.png" with a placeholder. Update the src attribute with your actual image path. -->
+                <img src="img/logo.png" alt="Profile Picture" class="profile-image w-28 h-28 rounded-full mx-auto mb-4 ring-4 ring-slate-700/50 object-cover">
+                <div class="typing-container flex items-center justify-center">
+                    <h1 class="text-2xl font-bold text-white">
+                        Hi, I am <span id="typing-text">Abderrahmane El Bouadani</span><span class="typing-cursor inline-block h-7 ml-1"></span>
                     </h1>
                 </div>
-                <p class="text-gray-700 mt-2 text-sm leading-relaxed max-w-sm mx-auto">
-                    Computer Science graduate passionate about technology, education, and innovation. I create projects that bridge IT skills with real-world impact.
+                <p class="text-slate-400 mt-2 text-sm leading-relaxed max-w-xs mx-auto">
+                    Computer Science graduate passionate about technology, education, and innovation.
                 </p>
                 <div class="flex justify-center items-center space-x-6 mt-6">
-                    <!-- GitHub -->
-                    <a href="https://github.com/abderrahmaneelbouadani" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gray-800 transition duration-300 social-icon">
+                    <a href="https://github.com/abderrahmaneelbouadani" target="_blank" rel="noopener noreferrer" class="social-icon text-slate-400">
                         <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" /></svg>
                     </a>
-                    <!-- LinkedIn -->
-                    <a href="https://www.linkedin.com/in/abderrahmane-el-bouadani-695421257" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gray-800 transition duration-300 social-icon">
+                    <a href="https://www.linkedin.com/in/abderrahmane-el-bouadani-695421257" target="_blank" rel="noopener noreferrer" class="social-icon text-slate-400">
                         <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                     </a>
                 </div>
             </div>
 
             <!-- Links Section -->
-            <div class="p-6 md:p-8 border-t border-gray-100 mt-6 md:border-t-0 md:mt-0">
-                <div class="space-y-4">
-                    <div class="relative">
-                        <button id="portfolio-dropdown-btn" class="link-button group flex items-center justify-between w-full p-4 rounded-full text-left font-semibold">
-                            <span>My Portfolio</span>
-                            <svg id="portfolio-dropdown-arrow" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </button>
-                        <div id="portfolio-dropdown-content" class="dropdown-content mt-2 rounded-lg border border-blue-100">
-                             <div class="p-4 text-center text-gray-600">
-                                <p class="text-sm italic">"Here you can find a collection of my recent work and projects."</p>
-                                <a href="https://abderrahamne-portfolio.netlify.app/" target="_blank" rel="noopener noreferrer" class="mt-2 inline-block text-blue-600 hover:underline font-semibold">View Portfolio</a>
-                             </div>
+            <div class="mt-8 space-y-4">
+                <!-- Portfolio Dropdown -->
+                <div>
+                    <button class="dropdown-btn link-button flex items-center justify-between w-full p-4 rounded-xl text-left font-medium">
+                        <span>My Portfolio</span>
+                        <svg class="dropdown-arrow w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="dropdown-content rounded-b-xl border-x border-b border-slate-700/50">
+                        <div class="p-4 text-center">
+                            <p class="text-sm italic text-slate-400">"A collection of my recent work and projects."</p>
+                            <a href="https://abderrahamne-portfolio.netlify.app/" target="_blank" rel="noopener noreferrer" class="mt-2 inline-block text-blue-400 hover:text-blue-300 font-semibold">View Portfolio &rarr;</a>
                         </div>
                     </div>
-                    
-                    <div class="relative">
-                        <button id="owner-dropdown-btn" class="link-button group flex items-center justify-between w-full p-4 rounded-full text-left font-semibold">
-                            <span>Owner of Content Page</span>
-                            <svg id="owner-dropdown-arrow" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </button>
-                        <div id="owner-dropdown-content" class="dropdown-content mt-2 rounded-lg border border-blue-100">
-                             <div class="p-4 text-center text-gray-600">
-                                <p class="text-sm italic">"I will be back stronger. I was disconnected and haven't posted content for a year."</p>
-                                <a href="https://www.instagram.com/info_learners?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="mt-2 inline-block text-blue-600 hover:underline font-semibold">View Page</a>
-                             </div>
-                        </div>
-                    </div>
+                </div>
 
-                    <div class="relative">
-                        <button id="social-dropdown-btn" class="link-button group flex items-center justify-between w-full p-4 rounded-full text-left font-semibold">
-                            <span>Other Socials</span>
-                            <svg id="social-dropdown-arrow" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </button>
-                        <div id="social-dropdown-content" class="dropdown-content mt-2 rounded-lg border border-blue-100">
-                             <div class="space-y-2 p-2">
-                                <a href="https://www.instagram.com/callme3abbod" target="_blank" rel="noopener noreferrer" class="social-link flex items-center space-x-3 p-3 rounded-md hover:bg-blue-100">
-                                    <svg class="w-6 h-6" viewBox="0 0 24 24" aria-hidden="true">
-                                        <defs><radialGradient id="ig-gradient" gradientUnits="userSpaceOnUse" cx="30%" cy="107%" r="150%"><stop stop-color="#fdf497"/><stop offset=".1" stop-color="#fdf497"/><stop offset=".5" stop-color="#fd5949"/><stop offset=".8" stop-color="#d6249f"/><stop offset=".9" stop-color="#285AEB"/></radialGradient></defs>
-                                        <path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.218.598 1.77.95.554.55.898 1.11 1.15 1.77.25.638.417 1.363.465 2.428.05 1.066.06 1.405.06 4.122s-.01 3.056-.06 4.122c-.05 1.065-.217 1.79-.465 2.428a4.883 4.883 0 01-1.15 1.77c-.55.55-1.11.898-1.77 1.15-.638.25-1.363.417-2.428.465-1.066.05-1.405.06-4.122.06s-3.056-.01-4.122-.06c-1.065-.05-1.79-.217-2.428-.465a4.883 4.883 0 01-1.77-1.15c-.55-.55-.898-1.11-1.15-1.77-.25-.638-.417-1.363-.465-2.428C2.01 15.056 2 14.717 2 12s.01-3.056.06-4.122c.05-1.065.217-1.79.465-2.428.254-.66.598-1.218.95-1.77.55-.554 1.11-.898 1.77-1.15.638-.25 1.363-.417 2.428-.465C8.944 2.01 9.283 2 12 2zm0 1.8a9.6 9.6 0 00-4.02.056c-1.03.05-1.57.21-1.98.38-.47.18-.84.42-1.2.78-.37.36-.6.72-.78 1.2-.17.4-.33.95-.38 1.98A9.6 9.6 0 003.8 12a9.6 9.6 0 00.056 4.02c.05 1.03.21 1.57.38 1.98.18.47.42.84.78 1.2.36.37.72.6 1.2.78.4.17.95.33 1.98.38A9.6 9.6 0 0012 20.2a9.6 9.6 0 004.02-.056c1.03-.05 1.57-.21 1.98-.38.47-.18.84-.42 1.2-.78.37-.36.6-.72.78-1.2.17-.4.33-.95.38-1.98A9.6 9.6 0 0020.2 12a9.6 9.6 0 00-.056-4.02c-.05-1.03-.21-1.57-.38-1.98-.18-.47-.42-.84-.78-1.2-.36-.37-.72-.6-1.2-.78-.4-.17-.95-.33-1.98-.38A9.6 9.6 0 0012 3.8zm0 3.35A4.85 4.85 0 1012 16.85 4.85 4.85 0 0012 7.15zm0 1.8a3.05 3.05 0 110 6.1 3.05 3.05 0 010-6.1zM16.95 6.3a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5z" fill="url(#ig-gradient)"/></svg>
-                                    <span class="font-semibold text-gray-700">Instagram</span>
-                                </a>
-                                <a href="https://x.com/X." target="_blank" rel="noopener noreferrer" class="social-link flex items-center space-x-3 p-3 rounded-md hover:bg-blue-100">
-                                    <svg class="w-6 h-6 text-gray-800" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                                    <span class="font-semibold text-gray-700">X (Twitter)</span>
-                                </a>
-                                <a href="https://www.facebook.com/share/19WKWVdRVM/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="social-link flex items-center space-x-3 p-3 rounded-md hover:bg-blue-100">
-                                    <svg class="w-6 h-6" fill="#1877F2" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
-                                    <span class="font-semibold text-gray-700">Facebook</span>
-                                </a>
-                            </div>
+                <!-- Content Page Dropdown -->
+                <div>
+                    <button class="dropdown-btn link-button flex items-center justify-between w-full p-4 rounded-xl text-left font-medium">
+                        <span>Owner of Content Page</span>
+                        <svg class="dropdown-arrow w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="dropdown-content rounded-b-xl border-x border-b border-slate-700/50">
+                        <div class="p-4 text-center">
+                            <p class="text-sm italic text-slate-400">"I will be back stronger. I was disconnected for a year."</p>
+                            <a href="https://www.instagram.com/info_learners?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="mt-2 inline-block text-blue-400 hover:text-blue-300 font-semibold">View Page &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Socials Dropdown -->
+                <div>
+                    <button class="dropdown-btn link-button flex items-center justify-between w-full p-4 rounded-xl text-left font-medium">
+                        <span>Other Socials</span>
+                        <svg class="dropdown-arrow w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="dropdown-content rounded-b-xl border-x border-b border-slate-700/50">
+                        <div class="p-2 space-y-1">
+                            <a href="https://www.instagram.com/callme3abbod" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-3 p-3 rounded-md hover:bg-slate-700/50 transition-colors">
+                                <svg class="w-6 h-6" viewBox="0 0 24 24"><defs><radialGradient id="ig" cx="30%" cy="107%" r="150%"><stop stop-color="#fdf497"/><stop offset=".1" stop-color="#fdf497"/><stop offset=".5" stop-color="#fd5949"/><stop offset=".8" stop-color="#d6249f"/><stop offset=".9" stop-color="#285AEB"/></radialGradient></defs><path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.218.598 1.77.95.554.55.898 1.11 1.15 1.77.25.638.417 1.363.465 2.428.05 1.066.06 1.405.06 4.122s-.01 3.056-.06 4.122c-.05 1.065-.217 1.79-.465 2.428a4.883 4.883 0 01-1.15 1.77c-.55.55-1.11.898-1.77 1.15-.638.25-1.363.417-2.428.465-1.066.05-1.405.06-4.122.06s-3.056-.01-4.122-.06c-1.065-.05-1.79-.217-2.428-.465a4.883 4.883 0 01-1.77-1.15c-.55-.55-.898-1.11-1.15-1.77-.25-.638-.417-1.363-.465-2.428C2.01 15.056 2 14.717 2 12s.01-3.056.06-4.122c.05-1.065.217-1.79.465-2.428.254-.66.598-1.218.95-1.77.55-.554 1.11-.898 1.77-1.15.638-.25 1.363-.417 2.428-.465C8.944 2.01 9.283 2 12 2zm0 1.8a9.6 9.6 0 00-4.02.056c-1.03.05-1.57.21-1.98.38-.47.18-.84.42-1.2.78-.37.36-.6.72-.78 1.2-.17.4-.33.95-.38 1.98A9.6 9.6 0 003.8 12a9.6 9.6 0 00.056 4.02c.05 1.03.21 1.57.38 1.98.18.47.42.84.78 1.2.36.37.72.6 1.2.78.4.17.95.33 1.98.38A9.6 9.6 0 0012 20.2a9.6 9.6 0 004.02-.056c1.03-.05 1.57-.21 1.98-.38.47-.18.84-.42 1.2-.78.37-.36.6-.72.78-1.2.17-.4.33-.95.38-1.98A9.6 9.6 0 0020.2 12a9.6 9.6 0 00-.056-4.02c-.05-1.03-.21-1.57-.38-1.98-.18-.47-.42-.84-.78-1.2-.36-.37-.72-.6-1.2-.78-.4-.17-.95-.33-1.98-.38A9.6 9.6 0 0012 3.8zm0 3.35A4.85 4.85 0 1012 16.85 4.85 4.85 0 0012 7.15zm0 1.8a3.05 3.05 0 110 6.1 3.05 3.05 0 010-6.1zM16.95 6.3a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5z" fill="url(#ig)"/></svg>
+                                <span class="font-medium text-slate-300">Instagram</span>
+                            </a>
+                            <a href="https://x.com/X." target="_blank" rel="noopener noreferrer" class="flex items-center space-x-3 p-3 rounded-md hover:bg-slate-700/50 transition-colors">
+                                <svg class="w-6 h-6 text-slate-300" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                                <span class="font-medium text-slate-300">X (Twitter)</span>
+                            </a>
+                            <a href="https://www.facebook.com/share/19WKWVdRVM/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-3 p-3 rounded-md hover:bg-slate-700/50 transition-colors">
+                                <svg class="w-6 h-6" fill="#1877F2" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
+                                <span class="font-medium text-slate-300">Facebook</span>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
+         <footer class="footer text-center mt-8 text-sm text-slate-500">
+                <p>&copy; 2024 Abderrahmane El Bouadani. All Rights Reserved.</p>
+        </footer>
     </main>
 
     <script>
-        // Dropdown script for "Portfolio"
-        document.getElementById('portfolio-dropdown-btn').addEventListener('click', function() {
-            var content = document.getElementById('portfolio-dropdown-content');
-            var arrow = document.getElementById('portfolio-dropdown-arrow');
-            content.classList.toggle('open');
-            arrow.style.transform = content.classList.contains('open') ? 'rotate(180deg)' : 'rotate(0deg)';
-        });
-        
-        // Dropdown script for "Owner of"
-        document.getElementById('owner-dropdown-btn').addEventListener('click', function() {
-            var content = document.getElementById('owner-dropdown-content');
-            var arrow = document.getElementById('owner-dropdown-arrow');
-            content.classList.toggle('open');
-            arrow.style.transform = content.classList.contains('open') ? 'rotate(180deg)' : 'rotate(0deg)';
-        });
-
-        // Dropdown script for "Other Socials"
-        document.getElementById('social-dropdown-btn').addEventListener('click', function() {
-            var content = document.getElementById('social-dropdown-content');
-            var arrow = document.getElementById('social-dropdown-arrow');
-            content.classList.toggle('open');
-            arrow.style.transform = content.classList.contains('open') ? 'rotate(180deg)' : 'rotate(0deg)';
-        });
-
-        // Typing effect script
-        const typingTextElement = document.getElementById('typing-text');
-        const textArray = [
-            "Abderrahmane El Bouadani",
-            "a Graphic & Web Designer",
-            "a Content Creator",
-            "an Educator"
-        ];
-        let textArrayIndex = 0;
-        let charIndex = 0;
-
-        function type() {
-            if (charIndex < textArray[textArrayIndex].length) {
-                typingTextElement.textContent = textArray[textArrayIndex].substring(0, charIndex + 1);
-                charIndex++;
-                setTimeout(type, 60);
-            } else {
-                setTimeout(erase, 1000);
-            }
-        }
-
-        function erase() {
-            if (charIndex > 0) {
-                typingTextElement.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
-                charIndex--;
-                setTimeout(erase, 50);
-            } else {
-                textArrayIndex = (textArrayIndex + 1) % textArray.length;
-                setTimeout(type, 1000);
-            }
-        }
-        
         document.addEventListener("DOMContentLoaded", function() { 
-            setTimeout(type, 500);
+            // --- Refactored Dropdown Script ---
+            // This single function now handles all dropdowns efficiently.
+            const dropdownButtons = document.querySelectorAll('.dropdown-btn');
+            
+            dropdownButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Find the content and arrow specific to the clicked button
+                    const content = button.nextElementSibling;
+                    const arrow = button.querySelector('.dropdown-arrow');
+                    
+                    // Toggle the 'open' class for the animation
+                    content.classList.toggle('open');
+                    
+                    // Rotate the arrow icon
+                    arrow.style.transform = content.classList.contains('open') 
+                        ? 'rotate(180deg)' 
+                        : 'rotate(0deg)';
+                });
+            });
+
+            // --- Typing Effect Script (Unchanged Logic) ---
+            const typingTextElement = document.getElementById('typing-text');
+            const textArray = [
+                "Abderrahmane El Bouadani",
+                "a Graphic & Web Designer",
+                "a Content Creator",
+                "an Educator"
+            ];
+            let textArrayIndex = 0;
+            let charIndex = textArray[0].length; // Start with the full text visible
+
+            function type() {
+                if (charIndex < textArray[textArrayIndex].length) {
+                    // Correctly set the substring instead of appending characters
+                    typingTextElement.textContent = textArray[textArrayIndex].substring(0, charIndex + 1);
+                    charIndex++;
+                    setTimeout(type, 60);
+                } else {
+                    setTimeout(erase, 2000); // Pause before erasing
+                }
+            }
+
+            function erase() {
+                if (charIndex > 0) {
+                    typingTextElement.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
+                    charIndex--;
+                    setTimeout(erase, 40);
+                } else {
+                    textArrayIndex = (textArrayIndex + 1) % textArray.length;
+                    setTimeout(type, 1000); // Pause before typing next text
+                }
+            }
+            
+            // Start the typing effect by erasing the initial text after a pause
+            setTimeout(erase, 2000);
         });
     </script>
 
+
 </body>
 </html>
+
+
+
